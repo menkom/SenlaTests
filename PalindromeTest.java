@@ -28,7 +28,7 @@ public class PalindromeTest {
     public static void main(String[] args) {
 
         Scanner inputText = new Scanner(System.in);
-        /*Палиндро?м, пе?ревертень — число, буквосочетание, слово или текст, 
+        /*Палиндром, перевертень — число, буквосочетание, слово или текст, 
             одинаково читающееся в обоих направлениях.
          */
 

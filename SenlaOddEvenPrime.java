@@ -3,24 +3,22 @@ import java.util.Scanner;
 
 public class SenlaOddEvenPrime {
 
-    public static String intEvenOddToText(int mValue) {
-        if (mValue % 2 == 0) {
-            return "чётное";
-        } else {
-            return "нечётное";
-        }
+    public static boolean isEven(int mValue) {
+        return (mValue % 2 == 0);
     }
 
-    public static String isPrime(int mValue) {
+    public static boolean isPrime(int mValue) {
         /*  Просто?е число — натуральное (целое положительное) число, имеющее ровно 
     два различных натуральных делителя — единицу и самого себя.   
          */
 
         boolean lIsPrime = true;
 
-        if (mValue < 2) { //Цикл не затрагивает числа, меньшие 2
+        //Цикл не затрагивает числа, меньшие 2
+        if (mValue < 2) {
             lIsPrime = false;
         } else {
+            //достаточно проверить все числа до квадрата числа на простоту
             for (int i = 2; i < Math.sqrt(mValue); i++) {
                 if (mValue % i == 0) {
                     lIsPrime = false;
@@ -28,11 +26,7 @@ public class SenlaOddEvenPrime {
                 }
             }
         }
-        if (lIsPrime) {
-            return "простое";
-        } else {
-            return "составное";
-        }
+        return lIsPrime;
     }
 
     public static void main(String[] args) {
@@ -42,7 +36,9 @@ public class SenlaOddEvenPrime {
 
         if (inputText.hasNextInt()) {
             int inputValue = inputText.nextInt();//Создано для удобства записи
-            System.out.println("Число " + inputValue + " " + intEvenOddToText(inputValue) + " и " + isPrime(inputValue));
+            System.out.println("Число " + inputValue + " "
+                    + (isEven(inputValue) ? "чётное" : "нечётное")
+                    + " и " + (isPrime(inputValue) ? "простое" : "составное"));
         } else {
             System.out.println("Ошибка ввода. Необходимо было ввести целое число");
         }

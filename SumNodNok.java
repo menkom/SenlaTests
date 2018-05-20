@@ -39,7 +39,6 @@ public class SumNodNok {
 
         } catch (Exception e) {
             System.out.println(lErrorMessage);
-
         }
     }
 }
